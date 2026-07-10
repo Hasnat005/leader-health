@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "leader-health-staging",
+    "staging": "leader-health-staging",
+    "production": "leader-health-prod"
+  }
+}

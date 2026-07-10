@@ -1,0 +1,6 @@
+node_modules/
+*.local
+.env
+gen-health-catalog-dump.json
+dotfit-catalog-dump.json
+secret-uploads/

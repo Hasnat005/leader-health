@@ -1,0 +1,160 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "PromoCodeAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "promoCodeId", "order": "ASCENDING" },
+        { "fieldPath": "active", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "PromoCodeAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "affiliateId", "order": "ASCENDING" },
+        { "fieldPath": "active", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "CheckoutSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "lastActivityAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "CommissionPayouts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "AffiliatePayouts",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "processorPriority", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "AffiliatePayouts",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "processorPriority", "order": "ASCENDING" },
+        { "fieldPath": "createdAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "AffiliatePayouts",
+      "queryScope": "COLLECTION_GROUP",
+      "fields": [
+        { "fieldPath": "status", "order": "ASCENDING" },
+        { "fieldPath": "processingStartedAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "FunnelSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "abandoned", "order": "ASCENDING" },
+        { "fieldPath": "lastActivityAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "FunnelSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "abandoned", "order": "ASCENDING" },
+        { "fieldPath": "lastActivityAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "FunnelSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "maxStepCompleted", "order": "ASCENDING" },
+        { "fieldPath": "lastActivityAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "FunnelSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "abandoned", "order": "ASCENDING" },
+        { "fieldPath": "abandonedDetectedAt", "order": "DESCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "FunnelSessions",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "reminderState", "order": "ASCENDING" },
+        { "fieldPath": "reminderEligibleAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "AffiliateProfiles",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "parentAffiliateId", "order": "ASCENDING" },
+        { "fieldPath": "deletedAt", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "AffiliateProfiles",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "rootSuperAffiliateId", "order": "ASCENDING" },
+        { "fieldPath": "tier", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "PromoCodeAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "promoCodeId", "order": "ASCENDING" },
+        { "fieldPath": "role", "order": "ASCENDING" },
+        { "fieldPath": "active", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "PromoCodeAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "parentAssignmentId", "order": "ASCENDING" },
+        { "fieldPath": "active", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "PromoCodeAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "affiliateId", "order": "ASCENDING" },
+        { "fieldPath": "role", "order": "ASCENDING" },
+        { "fieldPath": "active", "order": "ASCENDING" }
+      ]
+    }
+  ],
+  "fieldOverrides": [
+    {
+      "collectionGroup": "AffiliateProfiles",
+      "fieldPath": "ancestorIds",
+      "indexes": [
+        {
+          "order": "ASCENDING",
+          "queryScope": "COLLECTION"
+        },
+        {
+          "arrayConfig": "CONTAINS",
+          "queryScope": "COLLECTION"
+        }
+      ]
+    }
+  ]
+}

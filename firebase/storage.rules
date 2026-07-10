@@ -1,0 +1,34 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSuperAdminStorage() {
+      return request.auth != null
+        && firestore.exists(/databases/(default)/documents/Users/$(request.auth.uid))
+        && firestore.get(/databases/(default)/documents/Users/$(request.auth.uid)).data.role == 'super_admin';
+    }
+
+    /** Product service icons; public read for landing, super-admin writes only. */
+    match /product-content/{productId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isSuperAdminStorage();
+    }
+
+    /**
+     * Commission payout PDFs: `payouts/{affiliateUid}/{dateFolder}/…pdf`.
+     * Affiliates may read only their own prefix; super admins may read all.
+     * Writes are via Admin SDK only.
+     */
+    match /payouts/{ownerUid}/{rest=**} {
+      allow read: if request.auth != null
+        && (request.auth.uid == ownerUid || isSuperAdminStorage());
+      allow write: if false;
+    }
+
+    /** Default deny. */
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

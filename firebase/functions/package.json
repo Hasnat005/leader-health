@@ -1,0 +1,30 @@
+{
+  "name": "leader-health-functions",
+  "description": "Leader Health Cloud Functions (Gen Health storefront)",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions,firestore",
+    "deploy": "firebase deploy --only functions,firestore:rules",
+    "deploy:staging": "firebase deploy --only functions,firestore:rules --project leader-health-staging",
+    "deploy:production": "firebase deploy --only functions,firestore:rules --project leader-health-prod",
+    "catalog:sync": "node scripts/runCatalogSync.js",
+    "validate:secrets": "node scripts/validate-secrets.js",
+    "reset:sync-state": "node scripts/resetSyncState.js"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "stripe": "^17.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^17.4.2",
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}

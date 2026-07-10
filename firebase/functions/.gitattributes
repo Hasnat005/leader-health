@@ -1,0 +1,2 @@
+# Keep JS line endings consistent (ESLint linebreak-style + Windows checkouts).
+*.js text eol=lf
